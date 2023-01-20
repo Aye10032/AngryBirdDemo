@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public List<Bird> birds;
     public List<Enemy> pigs;
+    public GameObject win;
+    public GameObject loss;
     public static GameManager _instance;
 
     private Vector3 _originPos;
@@ -51,12 +53,14 @@ public class GameManager : MonoBehaviour
             else
             {
                 //输
+                loss.SetActive(true);
                 Debug.Log("loss!");
             }
         }
         else
         {
             //赢
+            win.SetActive(true);
             Debug.Log("win!");
         }
     }
