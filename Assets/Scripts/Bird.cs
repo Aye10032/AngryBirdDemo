@@ -27,8 +27,11 @@ public class Bird : MonoBehaviour
 
     private void OnMouseDown()
     {
+        sp.enabled = true;
+        this.enabled = true;
         _isClick = true;
         _rigidbody.isKinematic = true; //关闭物理计算
+        _rigidbody.gravityScale = 1;
     }
 
     private void OnMouseUp()

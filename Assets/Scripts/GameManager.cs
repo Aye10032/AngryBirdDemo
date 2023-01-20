@@ -32,19 +32,22 @@ public class GameManager : MonoBehaviour
             if (i == 0)
             {
                 birds[0].gameObject.transform.position = _originPos;
-                birds[i].enabled = true;
-                birds[i].sp.enabled = true;
+                // birds[i].enabled = true;
+                // birds[i].sp.enabled = true;
             }
-            else
-            {
-                birds[i].enabled = false;
-                birds[i].sp.enabled = false;
-            }
+            // else
+            // {
+            //     birds[i].enabled = false;
+            //     birds[i].sp.enabled = false;
+            // }
+            birds[i].enabled = false;
+            birds[i].sp.enabled = false;
         }
     }
 
     public void NextBird()
     {
+        Debug.Log(pigs.Count);
         if (pigs.Count > 0)
         {
             if (birds.Count > 0)
