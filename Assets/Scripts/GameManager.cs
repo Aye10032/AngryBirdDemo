@@ -32,14 +32,7 @@ public class GameManager : MonoBehaviour
             if (i == 0)
             {
                 birds[0].gameObject.transform.position = _originPos;
-                // birds[i].enabled = true;
-                // birds[i].sp.enabled = true;
             }
-            // else
-            // {
-            //     birds[i].enabled = false;
-            //     birds[i].sp.enabled = false;
-            // }
             birds[i].enabled = false;
             birds[i].sp.enabled = false;
         }
@@ -66,5 +59,10 @@ public class GameManager : MonoBehaviour
             //赢
             Debug.Log("win!");
         }
+    }
+
+    public void ShowStar()
+    {
+        
     }
 }
