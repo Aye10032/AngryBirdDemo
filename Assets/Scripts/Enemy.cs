@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pig : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float maxSpeed = 8f;
     public float minSpeed = 4f;
@@ -33,13 +33,18 @@ public class Pig : MonoBehaviour
 
     void Dead()
     {
+        GameObject go = null;
         if (CompareTag("Pig"))
         {
             GameManager._instance.pigs.Remove(this);
+            go = Instantiate(score, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
+        }
+        else if (CompareTag("Block"))
+        {
+            go = Instantiate(score, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
         Instantiate(boom, transform.position, Quaternion.identity);
-        GameObject go = Instantiate(score, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity);
         Destroy(go, 1.5f);
     }
 }

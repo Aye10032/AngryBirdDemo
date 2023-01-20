@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<Bird> birds;
-    public List<Pig> pigs;
+    public List<Enemy> pigs;
     public static GameManager _instance;
 
     private Vector3 _originPos;
